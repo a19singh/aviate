@@ -1,0 +1,274 @@
+{
+	"info": {
+		"_postman_id": "8a07c589-f660-487e-9fdc-d2cd846aecbd",
+		"name": "Aviate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Apply",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "ajayyadav@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Ajay Yadav",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "26",
+							"type": "text"
+						},
+						{
+							"key": "experience",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "Male",
+							"type": "text"
+						},
+						{
+							"key": "contact",
+							"value": "9454825516",
+							"type": "text"
+						},
+						{
+							"key": "current_salary",
+							"value": "22",
+							"type": "text"
+						},
+						{
+							"key": "expected_salary",
+							"value": "28",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/application/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"application",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List All Application",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/application/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"application",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/application/?email= astitvasingh19@gmail.com&name__icontains= astitva&contact= 9458707986&age__gte= 24&age__lte= 26&experience__gte= 2&experience__lte= 4&expected_salary__gte= 16&expected_salary__lte= 22",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"application",
+						""
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": " astitvasingh19@gmail.com",
+							"description": "exact email match"
+						},
+						{
+							"key": "name__icontains",
+							"value": " astitva",
+							"description": "Keyword to be searched in name"
+						},
+						{
+							"key": "contact",
+							"value": " 9458707986",
+							"description": "contact"
+						},
+						{
+							"key": "age__gte",
+							"value": " 24",
+							"description": "age geater than equal to"
+						},
+						{
+							"key": "age__lte",
+							"value": " 26",
+							"description": "age less than equal to"
+						},
+						{
+							"key": "experience__gte",
+							"value": " 2",
+							"description": "experience greater than equal to"
+						},
+						{
+							"key": "experience__lte",
+							"value": " 4",
+							"description": "experience less than equal to"
+						},
+						{
+							"key": "expected_salary__gte",
+							"value": " 16",
+							"description": "expected salary greater than equal to"
+						},
+						{
+							"key": "expected_salary__lte",
+							"value": " 22",
+							"description": "expected salary less than equal to"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update status (rejected)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "status",
+							"value": "Rejected",
+							"type": "default"
+						},
+						{
+							"key": "age",
+							"value": "22",
+							"type": "default",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/application/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"application",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update status (shortlisted)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "status",
+							"value": "Shortlisted",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/application/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"application",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Relevancy Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/application/search/?name=Ajay Kumar Yadav",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"application",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Ajay Kumar Yadav"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
