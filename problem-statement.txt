@@ -1,0 +1,32 @@
+Following is the Assignment:
+
+What to do?
+———————-
+Build REST API server for basic ATS for recruiters.
+- It should have api endpoints to create, search, shortlist or reject candidates. (done)
+- It should be able to store the candidate's name, age, gender, years_of_exp, phone number, email, current salary and expected salary. Apart from this there will be a status field, which will be “Applied” by default and it will change if the candidate gets shortlisted or rejected. (done)
+- Search api should be a listing api, which can be used to filter/search for specific candidates, who satisfy all the applied conditions. Example of search conditions: (done)
+- Search for all candidates whose expected salary is between 8 to 12. (done)
+- Search for candidates whose age is between 21 to 30 and years of exp is more than 3. (done)
+- Search for candidate based of there phone number, email or name. (done)
+
+You can use any python based web framework, preferably Django Rest Framework.
+
+Bonus Point
+———————
+- Create a separate api for name based search, which has a relevance based sorting. So that given a query, the api should return results in the following order:
+- On Top, Should be exact matches, where the query matches the name exactly.
+- After that should be all the names where some of the words in the query match the words in the name, in the descending order of number of overlapping words.
+- Example: if a query is “Ajay Kumar yadav” the order of results will be [“Ajay Kumar Yadav”, “Ajay Kumar”, “Ajay Yadav”, “Kumar Yadav”, “Ramesh Yadav”, “Ajay Singh”]
+- Write as optimised version of this logic as you can possibly think of.
+
+How to submit?
+--------------
+Create a public git repo and push your code on GitHub. Send us a link to the repo to review it. Additionally you can also deploy this app to services like heroku, vercel etc.
+
+What do we look for in a solution?
+-------------------------------
+1. Code structure and readability.
+2. Knowledge of the framework used.
+3. Thoughts put into exploring and handling edge cases
+4. Programming skills of-course.
